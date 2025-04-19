@@ -1,6 +1,6 @@
-# Ansh & Riley Full-Stack Template
+# AI Full-Stack Template
 
-This is a full-stack template project for Software Composers to create  applications with AI.
+This is a full-stack template project for Software Composers to create applications with AI.
 
 ## Getting started
 To create a new project, you go to `/paths`, choose from our list of Paths, and then use Cursor's Composer feature to quickly scaffold your project!
