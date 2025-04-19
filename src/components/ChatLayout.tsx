@@ -73,7 +73,7 @@ export default function ChatLayout() {
         <div className="flex items-center justify-center py-8 mb-8">
           <h1 className="text-4xl font-bold">
             <span className="neon-orange mr-2">✧</span>
-            <span className="gradient-text">How's it going, Sameer?</span>
+            <span className="gradient-text">How&apos;s it going, Sameer?</span>
           </h1>
         </div>
         

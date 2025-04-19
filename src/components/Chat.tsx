@@ -149,7 +149,7 @@ export default function Chat() {
             <div className="text-center max-w-md px-4">
               <h2 className="text-lg font-medium text-gray-200 mb-2">Welcome to Google Gemini</h2>
               <p className="text-gray-400">
-                I'm an AI assistant powered by Google's Gemini. Ask me anything, and I'll do my best to help you.
+                I&apos;m an AI assistant powered by Google&apos;s Gemini. Ask me anything, and I&apos;ll do my best to help you.
               </p>
               {error && (
                 <div className="mt-4 p-3 bg-red-900/50 text-red-200 rounded-md text-sm">
