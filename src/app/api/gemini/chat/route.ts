@@ -14,6 +14,18 @@ type Message = {
 
 export async function POST(req: Request) {
   try {
+    // Check if API key is available
+    if (!GEMINI_API_KEY || GEMINI_API_KEY === '') {
+      console.error('Missing Gemini API key in environment variables');
+      return NextResponse.json(
+        { error: "API key is not configured. Please add GEMINI_API_KEY to your environment variables." },
+        { status: 500 }
+      );
+    }
+
+    console.log("Using Gemini model:", MODEL);
+    console.log("API URL:", API_URL.replace(GEMINI_API_KEY, "API_KEY_HIDDEN"));
+
     const { messages }: { messages: Message[] } = await req.json();
     
     // Format messages to fit Gemini's API structure
@@ -70,6 +82,15 @@ export async function POST(req: Request) {
       try {
         // Try to parse as JSON if possible for more details
         const errorData = JSON.parse(errorText);
+        console.error('Detailed error:', JSON.stringify(errorData));
+        
+        if (response.status === 403) {
+          return NextResponse.json({ 
+            error: `Gemini API error: 403 Forbidden. This usually indicates an issue with your API key or permissions.`, 
+            details: errorData 
+          }, { status: response.status });
+        }
+        
         return NextResponse.json({ 
           error: `Gemini API error: ${response.status}`, 
           details: errorData 
