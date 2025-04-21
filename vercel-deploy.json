@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/api/index" }
+  ],
+  "env": {
+    "GEMINI_API_KEY": "AIzaSyA-f1ZAcNvUpH4jBuwqLJaBzTDvnQWC8q8",
+    "GEMINI_MODEL": "gemini-2.0-flash",
+    "GEMINI_API_BASE_URL": "https://generativelanguage.googleapis.com/v1beta",
+    "GEMINI_FALLBACK_URL": "https://generativelanguage.googleapis.com"
+  },
+  "build": {
+    "env": {
+      "GEMINI_API_KEY": "AIzaSyA-f1ZAcNvUpH4jBuwqLJaBzTDvnQWC8q8",
+      "GEMINI_MODEL": "gemini-2.0-flash",
+      "GEMINI_API_BASE_URL": "https://generativelanguage.googleapis.com/v1beta",
+      "GEMINI_FALLBACK_URL": "https://generativelanguage.googleapis.com"
+    }
+  }
+} 

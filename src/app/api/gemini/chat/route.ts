@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export const runtime = "edge";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
-const MODEL = process.env.GEMINI_MODEL || 'gemini-1.5-pro';
+const MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
 const API_BASE_URL = process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta';
 const FALLBACK_URL = process.env.GEMINI_FALLBACK_URL || 'https://generativelanguage.googleapis.com';
 
@@ -184,7 +184,8 @@ Make your response engaging, educational, and well-formatted.
       // Handle network or timeout errors
       console.error('Fetch error:', fetchError);
       
-      if (fetchError.name === 'AbortError') {
+      // Proper error handling with type checking
+      if (fetchError instanceof Error && fetchError.name === 'AbortError') {
         return NextResponse.json({ 
           error: "The request to the Gemini API timed out. Please try again later." 
         }, { status: 504 });

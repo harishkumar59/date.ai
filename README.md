@@ -1,76 +1,92 @@
-# Today in History
+# Today in History - Gemini AI Chat
 
-A sleek web application that lets you discover fascinating historical events that occurred on any date throughout history. Powered by Google's Gemini AI model.
-
-![Today in History App](https://i.imgur.com/Qm5vwAX.png)
+A beautifully designed web application that presents historical events that happened on a specific date, powered by Google's Gemini AI.
 
 ## Features
 
-- 📅 **Date-based Historical Events**: Select any date to see significant events that happened on that day throughout history
-- 🔍 **Today in History**: Quickly see what happened on today's date with a single click
-- 💾 **Persistent Chat History**: Your conversations are saved locally and persist even after refreshing the page
-- 🗂️ **Chat Management**: Create new chats, switch between saved conversations, and delete old ones
-- 📱 **Responsive Design**: Works seamlessly on both desktop and mobile devices
-- 🌙 **Modern UI**: Clean, intuitive interface with a minimalist design
-
-## Technology Stack
-
-- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
-- **AI**: Google's Gemini AI (via Google's Generative Language API)
-- **State Management**: React Hooks, localStorage for persistence
-- **Styling**: Custom Tailwind CSS components
+- Query for historical events by date
+- Elegantly designed UI with neon theme
+- Typewriter effect for AI responses
+- Chat history management
+- Responsive design for all devices
+- Powered by Google's Gemini 2.0 Flash AI
 
 ## Getting Started
 
-### Prerequisites
+First, install the dependencies:
 
-- Node.js 16.8.0 or later
-- A Google AI API key (Gemini model)
+```bash
+npm install
+```
 
-### Installation
+Then, create a `.env` file with your Gemini API key:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/today-in-history.git
-   cd today-in-history
-   ```
+```bash
+# Gemini
+GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-2.0-flash
+GEMINI_API_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+GEMINI_FALLBACK_URL=https://generativelanguage.googleapis.com
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+Run the development server:
 
-3. Create a `.env` file in the root directory and add your Gemini API key:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   GEMINI_MODEL=gemini-2.0-flash
-   ```
+```bash
+npm run dev
+```
 
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-5. Open your browser and navigate to `http://localhost:3000`
+## Deployment
 
-## Usage
+### Deploy to Vercel
 
-1. Select a date using the date picker or click the "Today in History" button
-2. View the AI-generated historical events for that date
-3. Create new conversations by clicking the "New Chat" button
-4. Access your previous conversations from the sidebar
-5. Delete conversations you no longer need
+The easiest way to deploy this app is using Vercel. You can use one of these methods:
 
-## Contributing
+#### Method 1: Using the provided deploy script
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Make the script executable and run it:
+
+```bash
+chmod +x deploy-direct.sh
+./deploy-direct.sh
+```
+
+#### Method 2: Using Vercel CLI directly
+
+```bash
+npm run build
+vercel --prod
+```
+
+#### Method 3: Connect with GitHub
+
+1. Push your code to GitHub
+2. Import your project in the Vercel dashboard
+3. Configure environment variables:
+   - GEMINI_API_KEY
+   - GEMINI_MODEL
+   - GEMINI_API_BASE_URL
+   - GEMINI_FALLBACK_URL
+4. Deploy
+
+### Troubleshooting Deployment
+
+If you encounter deployment issues:
+
+1. Check if your Vercel account is properly set up
+2. Verify that all environment variables are correctly set in Vercel
+3. Make sure your GitHub repository is connected to Vercel
+4. Try deploying with the direct script which sets all environment variables
+
+## Learn More
+
+To learn more about the technologies used:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Google Gemini AI](https://ai.google.dev/gemini-api)
+- [Vercel Deployment](https://vercel.com/docs/deployments/overview)
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Google's Gemini AI for powering the historical information
-- Next.js team for the amazing React framework
-- Tailwind CSS for the styling utilities
+MIT
