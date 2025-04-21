@@ -16,19 +16,17 @@ export default function Message({ content, role, isTyping = false, displayedCont
   const textToShow = isTyping ? displayedContent : content;
 
   return (
-    <div className={`py-6 ${role === 'assistant' 
-      ? 'bg-[rgba(6,27,43,0.4)] backdrop-blur-sm' 
-      : 'bg-[rgba(0,10,20,0.5)] backdrop-blur-sm'}`}>
-      <div className="mx-auto max-w-4xl px-6 md:px-8">
-        <div className="flex gap-4">
+    <div className={`py-4 ${role === 'assistant' ? 'bg-slate-800/80' : 'bg-slate-900/60'}`}>
+      <div className="mx-auto max-w-4xl px-4 md:px-6">
+        <div className="flex gap-3">
           {/* Avatar */}
           <div className="flex-shrink-0 mt-1">
             {role === 'assistant' ? (
-              <div className="h-10 w-10 rounded-md bg-[rgba(45,226,230,0.1)] border border-[rgba(45,226,230,0.4)] flex items-center justify-center text-[rgba(45,226,230,0.9)]">
-                C
+              <div className="h-9 w-9 rounded-lg bg-slate-700 border border-slate-600 flex items-center justify-center text-primary">
+                H
               </div>
             ) : (
-              <div className="h-10 w-10 rounded-md bg-[rgba(255,154,108,0.1)] border border-[rgba(255,154,108,0.4)] flex items-center justify-center text-[rgba(255,154,108,0.9)]">
+              <div className="h-9 w-9 rounded-lg bg-slate-700 border border-slate-600 flex items-center justify-center text-secondary">
                 U
               </div>
             )}
@@ -38,12 +36,12 @@ export default function Message({ content, role, isTyping = false, displayedCont
           <div className="flex-1 min-w-0 space-y-2">
             <div className="text-sm font-medium">
               {role === 'assistant' ? (
-                <span className="neon-teal">GEMINI</span>
+                <span className="text-primary">Historian</span>
               ) : (
-                <span className="neon-orange">You</span>
+                <span className="text-secondary">You</span>
               )}
             </div>
-            <div className={`prose prose-invert max-w-none ${role === 'assistant' ? 'text-[rgba(229,231,235,0.9)]' : 'text-[rgba(255,154,108,0.9)]'}`}>
+            <div className={`prose prose-invert max-w-none ${role === 'assistant' ? 'text-slate-200' : 'text-amber-100'}`}>
               {role === 'user' ? (
                 <p className="whitespace-pre-wrap">{textToShow}</p>
               ) : (
@@ -54,7 +52,7 @@ export default function Message({ content, role, isTyping = false, displayedCont
                 </ReactMarkdown>
               )}
               {isTyping && (
-                <span className="inline-block w-1.5 h-4 ml-0.5 bg-[rgba(45,226,230,0.9)] cursor-blink"></span>
+                <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary cursor-blink"></span>
               )}
             </div>
           </div>

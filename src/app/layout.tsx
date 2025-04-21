@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gemini Chat",
-  description: "Chat with Google's Gemini AI model",
+  title: "Today in History",
+  description: "Discover interesting historical events that happened on any date",
 };
 
 export default function RootLayout({
