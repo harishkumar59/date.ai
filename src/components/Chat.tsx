@@ -243,7 +243,7 @@ export default function Chat({ onSave, currentChatId, initialMessages = [] }: Ch
                 Select a date to discover fascinating historical events that occurred on that day throughout history.
               </p>
               <p className="text-xs text-slate-500">
-                Powered by Google's Gemini AI
+                Powered by Google&apos;s Gemini AI
               </p>
               {error && (
                 <div className="mt-4 p-3 bg-red-900/30 border border-red-700 text-red-200 rounded-lg text-sm">
